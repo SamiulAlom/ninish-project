@@ -26,7 +26,7 @@ export default function Banner() {
               }}
             >
               <div className="text-center">
-                <h3 className="max-[600px]:pt-10 text-4xl text-white font-bold">
+                <h3 className="max-sm:pt-10 max-sm:text-2xl text-4xl text-white font-bold">
                   মুজিব অলিম্পিয়াড ২০২৩ - গাজীপুর পর্ব
                 </h3>
                 <span className="flex justify-center">
