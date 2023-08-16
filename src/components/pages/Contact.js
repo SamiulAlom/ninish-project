@@ -3,7 +3,7 @@ import img from "../../images/fb.png";
 
 export default function Contact() {
   return (
-    <div className="bg-white justify-center flex" style={{ height: "73vh" }}>
+    <div className="bg-white justify-center flex">
       <div className="pb-10 bg-white  ">
         <div className="pt-20 container">
           <h1 className="text-2xl text-center font-bold">
