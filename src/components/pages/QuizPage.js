@@ -3,7 +3,7 @@ import Rules from "./subpage/Ruels";
 
 export default function QuizPage() {
   return (
-    <div className="bg-white max-sm:p-10">
+    <div className="bg-white max-sm:p-5">
       <Rules />
     </div>
   );
