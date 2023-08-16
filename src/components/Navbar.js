@@ -18,7 +18,7 @@ export default function Navbar() {
           ["যোগাযোগ", "/contact"],
         ].map(([title, url]) => (
           <Link
-            to="url"
+            to={url}
             className="rounded-lg px-6 py-2 text-[#000] font-medium font-[Poppins] transition duration-300 hover:ease-in-out hover:bg-slate-100 hover:text-slate-900"
           >
             {title}
