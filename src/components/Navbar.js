@@ -1,13 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import images from "../images/logo.png";
 export default function Navbar() {
   return (
     <nav className="max-[600px]:block max-[600px]:mb-10 flex items-center sm:justify-around space-x-4 bg-gradient-to-l from-[#fff] to-[#f7f4f4] ">
       <div className="max-[600px]:w-screen max-[600px]:flex max-[600px]:justify-center">
-        <a href="/">
+        <Link to="/">
           {" "}
           <img className="w-27 h-20" src={images} alt="logo" />
-        </a>
+        </Link>
       </div>
       <div className="max-[600px]:flex-wrap">
         {[
