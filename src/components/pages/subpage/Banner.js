@@ -7,7 +7,7 @@ export default function Banner() {
     <div>
       {/* click here section */}
       <div
-        style={{ height: "480px", paddingBottom: "10px" }}
+        style={{ height: "500px", paddingBottom: "10px" }}
         className="bg-[#fff] w-50"
       >
         <div className="bg-gradient-to-tr from-purple-900 to bg-green-900 h-full relative">
