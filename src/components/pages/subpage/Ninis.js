@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Ninis() {
   return (
-    <div className="min-[600px]:h-[65vh] pb-10 bg-white flex justify-center">
+    <div className="min-sm:h-[65vh] max-sm:p-10 pb-10 bg-white flex justify-center">
       <div className=" container">
         <h1 className="text-2xl text-center font-bold">নিণীষ কি?</h1>
         <p className="text-center text-lg mt-5">
