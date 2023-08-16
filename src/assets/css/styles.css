@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Courgette&family=Noto+Sans+Bengali:wght@300;400;500;700&family=Poppins:wght@400;500;600;700;900&family=Tiro+Bangla&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courgette&family=Poppins:wght@400;500;600;700;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: white;
+}
+/*  নিণীষের পুর্ববর্তী কাজ সমূহ */
+.circ {
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.navStyle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
