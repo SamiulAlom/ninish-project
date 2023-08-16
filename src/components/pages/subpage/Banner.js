@@ -7,7 +7,7 @@ export default function Banner() {
     <div>
       {/* click here section */}
       <div
-        style={{ height: "450px", paddingBottom: "10px" }}
+        style={{ height: "480px", paddingBottom: "10px" }}
         className="bg-[#fff] w-50"
       >
         <div className="bg-gradient-to-tr from-purple-900 to bg-green-900 h-full relative">
@@ -26,7 +26,7 @@ export default function Banner() {
               }}
             >
               <div className="text-center">
-                <h3 className="text-4xl text-white font-bold">
+                <h3 className="max-[600px]:pt-10 text-4xl text-white font-bold">
                   মুজিব অলিম্পিয়াড ২০২৩ - গাজীপুর পর্ব
                 </h3>
                 <span className="flex justify-center">
