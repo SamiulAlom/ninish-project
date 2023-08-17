@@ -8,9 +8,9 @@ export default function Banner() {
       {/* click here section */}
       <div
         style={{ height: "500px", paddingBottom: "10px" }}
-        className="bg-[#fff] w-50"
+        className="bg-[#fff] pt-5 w-50 justify-center flex"
       >
-        <div className="bg-gradient-to-tr from-purple-900 to bg-green-900 h-full relative">
+        <div className="bg-gradient-to-tr container from-purple-900 to bg-green-900 h-full relative rounded-[15px]">
           <Link to="/mujib-olympiad">
             <img
               src={image}
@@ -39,13 +39,13 @@ export default function Banner() {
                     alt=""
                   />
                 </span>
-                <h1 className="text-1xl p-5 text-white font-bold">
+                <h1 className="text-[25px] p-5 text-white font-bold">
                   মুজিব অলিম্পিয়াড ২০২৩ - গাজীপুর পর্বে অংশগ্রহণ করতে
                 </h1>
 
                 <Link
                   to="/mujib-olympiad"
-                  className="bg-[#3b1468] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                  className="bg-[#3b1468] hover:bg-blue-700 text-white text-[18px] font-bold py-3 px-6 rounded-full"
                 >
                   এখানে ক্লিক করুন
                 </Link>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import images from "../images/logo.png";
 export default function Navbar() {
   return (
-    <nav className="max-sm:block max-sm:mb-10 flex items-center sm:justify-around space-x-4 bg-gradient-to-l from-[#fff] to-[#f7f4f4] ">
+    <nav className="max-sm:block max-sm:pb-6 max-sm:mb-10 flex items-center sm:justify-around space-x-4 bg-gradient-to-l from-[#e2dede] to-[#e9e3e3] ">
       <div className="max-sm:w-screen max-sm:flex max-sm:justify-center">
         <Link to="/">
           {" "}

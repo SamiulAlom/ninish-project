@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 export default function Form() {
   return (
@@ -63,7 +63,7 @@ export default function Form() {
             value="Submit"
             className="bg-[#3b1468] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
           >
-            <Link to="">পরবর্তী</Link>
+            পরবর্তী
           </button>
         </div>
       </form>
