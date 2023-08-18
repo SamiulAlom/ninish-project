@@ -12,7 +12,7 @@ export default function Form() {
             required
             placeholder="Enter your name"
             type="text"
-            class="rounded text-[#000] mt-3 block w-full"
+            class="rounded text-[#000] mt-3 block w-[50vw] p-3"
           />
         </div>
         <div className="pb-10">
@@ -22,7 +22,7 @@ export default function Form() {
             required
             placeholder="Enter your class"
             type="text"
-            class="rounded text-[#000] mt-3 block w-full"
+            class="rounded text-[#000] mt-3 block w-[50vw] p-3"
           />
         </div>
         <div className="pb-10">
@@ -32,7 +32,7 @@ export default function Form() {
             required
             placeholder="Enter your institute name"
             type="text"
-            class="rounded text-[#000] mt-3 block w-full"
+            class="rounded text-[#000] mt-3 block w-[50vw] p-3"
           />
         </div>
         <div className="pb-10">
@@ -42,7 +42,7 @@ export default function Form() {
             required
             placeholder="Enter your phone number"
             type="number"
-            class="rounded text-[#000] mt-3 block w-full"
+            class="rounded text-[#000] mt-3 block w-[50vw] p-3"
           />
         </div>
         <div className="pb-10">
@@ -53,15 +53,15 @@ export default function Form() {
             id="regNumber"
             required
             placeholder="Enter your registration number"
-            type="number"
-            class="rounded text-[#000] mt-3 block w-full"
+            type="text"
+            class="rounded text-[#000] mt-3 block w-[50vw] p-3"
           />
         </div>
         <div className="flex pb-20 justify-center pt-10">
           <button
             type="submit"
             value="Submit"
-            className="bg-[#3b1468] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+            className="bg-[#3b1468] hover:bg-blue-700 text-white font-bold py-3 px-7 rounded-full"
           >
             পরবর্তী
           </button>

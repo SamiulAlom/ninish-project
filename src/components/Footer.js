@@ -12,7 +12,7 @@ export default function Navbar() {
       <div>
         <p>যোগাযোগ </p>
         <br />
-        <p>ফোন: +০১৭১১১১১১১১</p>
+        <p>ফোন: +০১৭৯৩০০০৮৭৩</p>
         <p>ইমেইল: support@ninish.com</p>
       </div>
     </footer>

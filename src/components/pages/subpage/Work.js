@@ -1,5 +1,5 @@
 import React from "react";
-import img from "../../../images/bd.png";
+import img from "../../../images/gvt.png";
 
 export default function Work() {
   return (
@@ -21,15 +21,15 @@ export default function Work() {
             </div>
           </div>
         </div>
-        <div>
-          <h1 className="text-1xl text-[#000] pt-10 pb-5 text-center font-bold">
+        <div className="text-white pb-10 mt-8 bg-[#686464]">
+          <h1 className="text-1xl pt-10 pb-5 text-center font-bold">
             সহযোগিতায়
           </h1>
           <span className="flex justify-center">
             <img className="w-27 h-20" src={img} alt="" />
           </span>
           <span className="flex justify-center">
-            <div className="text-center">
+            <div className=" mt-3 text-center">
               <p>যুব ও ক্রীড়া মন্ত্রণালয় </p>
               <p>গনপ্রজাতন্ত্রী বাংলাদেশ সরকার</p>
             </div>
