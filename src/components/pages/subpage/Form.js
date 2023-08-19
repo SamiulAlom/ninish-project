@@ -41,7 +41,7 @@ export default function Form() {
             id="phone"
             required
             placeholder="Enter your phone number"
-            type="number"
+            type="text"
             class="rounded text-[#000] mt-3 block w-[50vw] p-3"
           />
         </div>
