@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Form() {
   return (
-    <div className="form bg-white pt-20 pr-20 pl-20">
+    <div className="form flex justify-center bg-white pt-20 pr-20 pl-20">
       <form to="/catagory" action="/catagory">
         <div className="pb-10">
           <label htmlFor="">নামঃ</label>
@@ -57,7 +57,7 @@ export default function Form() {
             class="rounded text-[#000] mt-3 block w-[50vw] p-3"
           />
         </div>
-        <div className="flex pb-20 justify-center pt-10">
+        <div className=" pb-20  pt-10">
           <button
             type="submit"
             value="Submit"
