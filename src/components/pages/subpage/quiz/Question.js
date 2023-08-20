@@ -1,14 +1,11 @@
 import React from "react";
 import Answer from "./Answer";
 
-export default function Question() {
-  return (
-    <div className="flex justify-start bg-white">
-      <div className=" bg-white p-5">
-        <h3 className="font-bold">{1} .What is your name?</h3>
-        <Answer />
-        <hr />
-      </div>
+export default function Question({ answers = [] }) {
+  return answers.map((answer, index) => (
+    <div className="flex justify-start bg-white" key={index}>
+      <div className="p-4 font-bold text-[18px]">{answer.title}</div>
+      <Answer input={false} options={answer.options} />
     </div>
-  );
+  ));
 }
