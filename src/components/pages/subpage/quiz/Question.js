@@ -1,11 +1,12 @@
 import React from "react";
 import Answer from "./Answer";
 
-export default function Question({ answers = [] }) {
-  return answers.map((answer, index) => (
-    <div className="flex justify-start bg-white" key={index}>
-      <div className="p-4 font-bold text-[18px]">{answer.title}</div>
-      <Answer input={false} options={answer.options} />
+export default function Question() {
+  return (
+    <div className="flex justify-start bg-white">
+      <div className="p-4 font-bold text-[18px]">{}</div>
+      <Answer input={false} />
+      <hr className="bg-[#3b1468]" />
     </div>
-  ));
+  );
 }
