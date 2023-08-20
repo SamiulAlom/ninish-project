@@ -37,7 +37,7 @@ export default function Form() {
       formData.phone,
       formData.regNumber
     );
-    navigate("/category");
+    navigate("/categories");
   };
 
   return (

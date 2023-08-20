@@ -23,8 +23,8 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/online-batch" element={<Batch />} />
             <Route path="/form" element={<Form />} />
-            <Route path="/category" element={<Category />} />
-            <Route path="/quiz" element={<Quiz />} />
+            <Route path="/categories" element={<Category />} />
+            <Route path="/quiz/:id" element={<Quiz />} />
           </Routes>
         </Layout>
       </Router>

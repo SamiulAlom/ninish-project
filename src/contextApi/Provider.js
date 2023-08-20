@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import MainContext from "./MainContext";
 
 const ContextProvider = (props) => {
@@ -6,6 +6,7 @@ const ContextProvider = (props) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
+    // Check if user has already entered information
     if (localStorage.getItem("user")) {
       const localUser = JSON.parse(localStorage.getItem("user"));
       setUser({
@@ -39,13 +40,19 @@ const ContextProvider = (props) => {
     );
   };
 
-  const getQuiz = async (category) => {};
+  const checkRegNumber = useCallback(async () => {
+    return true;
+  }, []);
+
+  const getQuiz = async (category) => {
+    setQuiz();
+  };
 
   const submitQuiz = async () => {};
 
   return (
     <MainContext.Provider
-      value={{ quiz, user, modifyUser, getQuiz, submitQuiz }}
+      value={{ quiz, user, modifyUser, getQuiz, submitQuiz, checkRegNumber }}
     >
       {props.children}
     </MainContext.Provider>
