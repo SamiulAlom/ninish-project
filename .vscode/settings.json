@@ -9,6 +9,7 @@
     "typescript.validate.enable": false,
     "css.lint.unknownAtRules": "ignore",
     "cSpell.words": [
-      "Nisis"
+      "Ninish",
+      "tailwindcss"
     ]
   }

@@ -1,10 +1,48 @@
-import React from "react";
-// import { Link } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import MainContext from "../../../contextApi/MainContext";
 
 export default function Form() {
+  const mainContext = useContext(MainContext);
+  const { user, modifyUser } = mainContext;
+
+  const navigate = useNavigate();
+
+  const [formData, setFormData] = useState({
+    name: "",
+    cls: "",
+    institute: "",
+    phone: "",
+    regNumber: "",
+  });
+
+  useEffect(() => {
+    if (user != null) {
+      setFormData({
+        name: user?.name,
+        cls: user?.cls,
+        institute: user?.institute,
+        phone: user?.phone,
+        regNumber: user?.regNumber,
+      });
+    }
+  }, [user]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    modifyUser(
+      formData.name,
+      formData.cls,
+      formData.institute,
+      formData.phone,
+      formData.regNumber
+    );
+    navigate("/category");
+  };
+
   return (
     <div className="form flex justify-center bg-white pt-20 pr-20 pl-20">
-      <form to="/catagory" action="/catagory">
+      <form onSubmit={handleSubmit}>
         <div className="pb-10">
           <label htmlFor="">নামঃ</label>
           <input
@@ -12,17 +50,21 @@ export default function Form() {
             required
             placeholder="Enter your name"
             type="text"
-            class="rounded text-[#000] mt-3 block w-[50vw] p-3"
+            className="rounded text-[#000] mt-3 block w-[50vw] p-3 bg-purple-100"
+            value={formData.name}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           />
         </div>
         <div className="pb-10">
           <label htmlFor="">শ্রেণিঃ</label>
           <input
-            id="class"
+            id="cls"
             required
-            placeholder="Enter your class"
+            placeholder="Enter your className"
             type="text"
-            class="rounded text-[#000] mt-3 block w-[50vw] p-3"
+            className="rounded text-[#000] mt-3 block w-[50vw] p-3 bg-purple-100"
+            value={formData.cls}
+            onChange={(e) => setFormData({ ...formData, cls: e.target.value })}
           />
         </div>
         <div className="pb-10">
@@ -32,7 +74,11 @@ export default function Form() {
             required
             placeholder="Enter your institute name"
             type="text"
-            class="rounded text-[#000] mt-3 block w-[50vw] p-3"
+            className="rounded text-[#000] mt-3 block w-[50vw] p-3 bg-purple-100"
+            value={formData.institute}
+            onChange={(e) =>
+              setFormData({ ...formData, institute: e.target.value })
+            }
           />
         </div>
         <div className="pb-10">
@@ -42,7 +88,11 @@ export default function Form() {
             required
             placeholder="Enter your phone number"
             type="text"
-            class="rounded text-[#000] mt-3 block w-[50vw] p-3"
+            className="rounded text-[#000] mt-3 block w-[50vw] p-3 bg-purple-100"
+            value={formData.phone}
+            onChange={(e) =>
+              setFormData({ ...formData, phone: e.target.value })
+            }
           />
         </div>
         <div className="pb-10">
@@ -54,10 +104,14 @@ export default function Form() {
             required
             placeholder="Enter your registration number"
             type="text"
-            class="rounded text-[#000] mt-3 block w-[50vw] p-3"
+            className="rounded text-[#000] mt-3 block w-[50vw] p-3 bg-purple-100"
+            value={formData.regNumber}
+            onChange={(e) =>
+              setFormData({ ...formData, regNumber: e.target.value })
+            }
           />
         </div>
-        <div className=" pb-20  pt-10">
+        <div className="pb-10">
           <button
             type="submit"
             value="Submit"

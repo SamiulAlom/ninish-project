@@ -6,10 +6,10 @@ import Batch from "./components/pages/Batch";
 import Contact from "./components/pages/Contact";
 import Landing from "./components/pages/Landing";
 import QuizPage from "./components/pages/QuizPage";
-import ContextProvider from "./components/pages/contextApi/Provider";
-import Catagory from "./components/pages/subpage/Catagory";
+import Category from "./components/pages/subpage/Category";
 import Form from "./components/pages/subpage/Form";
 import Quiz from "./components/pages/subpage/quiz/Quiz";
+import ContextProvider from "./contextApi/Provider";
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/online-batch" element={<Batch />} />
             <Route path="/form" element={<Form />} />
-            <Route path="/catagory" element={<Catagory />} />
+            <Route path="/category" element={<Category />} />
             <Route path="/quiz" element={<Quiz />} />
           </Routes>
         </Layout>

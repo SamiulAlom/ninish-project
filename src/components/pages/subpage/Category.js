@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Catagory() {
+export default function Category() {
   return (
     <div className="flex justify-center bg-white">
       <div
