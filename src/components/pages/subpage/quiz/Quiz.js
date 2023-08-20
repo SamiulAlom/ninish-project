@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import MainContext from "../../../../contextApi/MainContext";
 import Question from "./Question";
 
 export default function Quiz() {
   const { id } = useParams();
+  const { getQuiz } = useContext(MainContext);
 
-  console.log(id);
+  useEffect(() => {
+    const get = async () => {
+      // const res = await getQuiz(id);
+    };
+    get();
+  }, [getQuiz, id]);
 
   return (
     <div className=" min-h-[73vh] bg-white">

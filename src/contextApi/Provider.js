@@ -41,12 +41,14 @@ const ContextProvider = (props) => {
   };
 
   const checkRegNumber = useCallback(async () => {
-    return true;
-  }, []);
+    if (user != null) {
+    }
+    return false;
+  }, [user]);
 
-  const getQuiz = async (category) => {
+  const getQuiz = useCallback(async (category) => {
     setQuiz();
-  };
+  }, []);
 
   const submitQuiz = async () => {};
 

@@ -4,7 +4,7 @@ import MainContext from "../../../contextApi/MainContext";
 
 export default function Category() {
   const mainContext = useContext(MainContext);
-  const { user, checkRegNumber } = mainContext;
+  const { checkRegNumber } = mainContext;
 
   const [show, setShow] = useState(false);
 
