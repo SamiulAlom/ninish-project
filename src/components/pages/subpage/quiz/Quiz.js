@@ -86,16 +86,18 @@ export default function Quiz() {
     );
   } else if (!isError && quizzes.length > 0) {
     content = (
-      <div>
+      <div className="quiz-container grid xl:grid-cols-2 gap-4 mb-2">
         {quizzes.map((quiz, ind) => (
           <Question key={quiz.id} quiz={quiz} quizNumber={ind} />
         ))}
-        <button
-          type="submit"
-          className="bg-[#3b1468] hover:bg-blue-700 text-white font-bold py-3 px-10 rounded-full mt-4"
-        >
-          জমা দিন
-        </button>
+        <div>
+          <button
+            type="submit"
+            className="bg-[#3b1468] hover:bg-blue-700 text-white font-bold py-3 px-10 rounded-full"
+          >
+            জমা দিন
+          </button>
+        </div>
       </div>
     );
   }
@@ -116,10 +118,7 @@ export default function Quiz() {
         </div>
       )}
 
-      <form
-        className="quiz-container grid xl:grid-cols-2 gap-4 mb-4"
-        onSubmit={handleSubmit}
-      >
+      <form onSubmit={handleSubmit}>
         <quizContext.Provider value={{ handleQuizUpdate }}>
           {content}
         </quizContext.Provider>
