@@ -1,4 +1,5 @@
 import React from "react";
+import { Toaster } from "react-hot-toast";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
 import About from "./components/pages/About";
@@ -14,6 +15,7 @@ import ContextProvider from "./contextApi/Provider";
 function App() {
   return (
     <ContextProvider>
+      <Toaster position="top-center" reverseOrder={false} />
       <Router>
         <Layout>
           <Routes>

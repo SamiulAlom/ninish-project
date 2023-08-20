@@ -42,19 +42,16 @@ const ContextProvider = (props) => {
 
   const checkRegNumber = useCallback(async () => {
     if (user != null) {
+      return true;
     }
     return false;
   }, [user]);
-
-  const getQuiz = useCallback(async (category) => {
-    setQuiz();
-  }, []);
 
   const submitQuiz = async () => {};
 
   return (
     <MainContext.Provider
-      value={{ quiz, user, modifyUser, getQuiz, submitQuiz, checkRegNumber }}
+      value={{ quiz, user, modifyUser, submitQuiz, checkRegNumber }}
     >
       {props.children}
     </MainContext.Provider>
