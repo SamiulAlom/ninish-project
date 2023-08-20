@@ -19,6 +19,7 @@ export default function Navbar() {
         ].map(([title, url]) => (
           <Link
             to={url}
+            key={url}
             className="rounded-lg px-6 py-2 text-[#000] font-medium font-[Poppins] transition duration-500 hover:ease-in-out hover:bg-[#3D007D] hover:text-white"
           >
             {title}

@@ -1,5 +1,5 @@
 import React from "react";
-import Rules from "./subpage/Ruels";
+import Rules from "./subpage/Rules";
 
 export default function QuizPage() {
   return (
