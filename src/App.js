@@ -14,9 +14,9 @@ import ContextProvider from "./contextApi/Provider";
 
 function App() {
   return (
-    <ContextProvider>
-      <Toaster position="top-center" reverseOrder={false} />
-      <Router>
+    <Router>
+      <ContextProvider>
+        <Toaster position="top-center" reverseOrder={false} />
         <Layout>
           <Routes>
             <Route path="/" element={<Landing />} />
@@ -29,8 +29,8 @@ function App() {
             <Route path="/quiz/:id" element={<Quiz />} />
           </Routes>
         </Layout>
-      </Router>
-    </ContextProvider>
+      </ContextProvider>
+    </Router>
   );
 }
 

@@ -48,9 +48,26 @@ export default function Quiz() {
     setQuizzes(modQuizzes);
   };
 
+  // Check if all the questions are answered
+  const checkFormat = () => {
+    let flag = true;
+    quizzes.forEach((quiz) => {
+      let ck = 0;
+      quiz.options.forEach((option) => {
+        if (!option.isSelected) ck++;
+      });
+      if (ck === 4) {
+        flag = false;
+      }
+    });
+    return flag;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await submitQuiz(quizzes);
+    if (checkFormat()) {
+      await submitQuiz(quizzes);
+    } else toast.error("সবগুলো প্রশ্নের উত্তর দিন!");
   };
 
   // Decide what to show
@@ -68,24 +85,37 @@ export default function Quiz() {
       </div>
     );
   } else if (!isError && quizzes.length > 0) {
-    content = quizzes.map((quiz, ind) => (
-      <Question key={quiz.id} quiz={quiz} quizNumber={ind} />
-    ));
+    content = (
+      <div>
+        {quizzes.map((quiz, ind) => (
+          <Question key={quiz.id} quiz={quiz} quizNumber={ind} />
+        ))}
+        <button
+          type="submit"
+          className="bg-[#3b1468] hover:bg-blue-700 text-white font-bold py-3 px-10 rounded-full mt-4"
+        >
+          জমা দিন
+        </button>
+      </div>
+    );
   }
 
   return (
     <div className="min-h-[74vh] container mx-auto px-2">
-      <div className="text-center mb-4">
-        <h1 className="text-[28px] text-[#3D007D] py-3 text-center font-bold">
-          মুজিব অলিম্পিয়াড ২০২৩ - গাজীপুর পর্ব
-        </h1>
-        <p className="mb-2 font-bold">প্রাথমিক(৩য়,৪র্থ,৫ম)</p>
-        <p className="flex justify-center gap-4">
-          <span>মোট প্রশ্নঃ ৪০ টি</span>
-          <span>মোট সময়ঃ ৩৫ মিনিট</span>
-        </p>
-        <p className="mt-2 font-bold">অবশিষ্ট সময়ঃ ৩৫ মিনিট</p>
-      </div>
+      {!isLoading && !isError && quizzes.length > 0 && (
+        <div className="text-center mb-4">
+          <h1 className="text-[28px] text-[#3D007D] py-3 text-center font-bold">
+            মুজিব অলিম্পিয়াড ২০২৩ - গাজীপুর পর্ব
+          </h1>
+          <p className="mb-2 font-bold">প্রাথমিক(৩য়,৪র্থ,৫ম)</p>
+          <p className="flex justify-center gap-4">
+            <span>মোট প্রশ্নঃ ৪০ টি</span>
+            <span>মোট সময়ঃ ৩৫ মিনিট</span>
+          </p>
+          <p className="mt-2 font-bold">অবশিষ্ট সময়ঃ ৩৫ মিনিট</p>
+        </div>
+      )}
+
       <form
         className="quiz-container grid xl:grid-cols-2 gap-4 mb-4"
         onSubmit={handleSubmit}
@@ -93,14 +123,6 @@ export default function Quiz() {
         <quizContext.Provider value={{ handleQuizUpdate }}>
           {content}
         </quizContext.Provider>
-        <div>
-          <button
-            type="submit"
-            className="bg-[#3b1468] hover:bg-blue-700 text-white font-bold py-3 px-10 rounded-full"
-          >
-            জমা দিন
-          </button>
-        </div>
       </form>
     </div>
   );

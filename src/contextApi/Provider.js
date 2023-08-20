@@ -1,8 +1,13 @@
 import { useCallback, useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 import MainContext from "./MainContext";
 
 const ContextProvider = (props) => {
   const [user, setUser] = useState(null);
+
+  const baseUrl = process.env.REACT_APP_BASE_URL;
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Check if user has already entered information
@@ -47,7 +52,21 @@ const ContextProvider = (props) => {
   }, [user]);
 
   const submitQuiz = async (quizzes) => {
-    console.log(quizzes);
+    try {
+      await fetch(`${baseUrl}/submit`, {
+        method: "post",
+        body: JSON.stringify(quizzes),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      toast.success("আপনার উত্তর সফলভাবে জমা হয়েছে। ধন্যবাদ।");
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
+    } catch {
+      toast.error("অসুবিধার জন্য দুঃখিত। আবার চেষ্টা করুন।");
+    }
   };
 
   return (
