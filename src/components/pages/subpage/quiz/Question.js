@@ -1,14 +1,6 @@
 import React from "react";
 import QuizOption from "./QuizOption";
 
-<<<<<<< HEAD
-export default function Question() {
-  return (
-    <div className="flex justify-start bg-white">
-      <div className="p-4 font-bold text-[18px]">{}</div>
-      <Answer input={false} />
-      <hr className="bg-[#3b1468]" />
-=======
 export default function Question({ quiz, quizNumber }) {
   const { options } = quiz;
   return (
@@ -25,7 +17,6 @@ export default function Question({ quiz, quizNumber }) {
           />
         ))}
       </div>
->>>>>>> 89d4548ed5975b0e5fe8dd49b663e2ae02c621a0
     </div>
   );
 }

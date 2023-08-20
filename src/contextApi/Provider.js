@@ -2,7 +2,6 @@ import { useCallback, useEffect, useState } from "react";
 import MainContext from "./MainContext";
 
 const ContextProvider = (props) => {
-  const [quiz, setQuiz] = useState();
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -47,11 +46,13 @@ const ContextProvider = (props) => {
     return false;
   }, [user]);
 
-  const submitQuiz = async () => {};
+  const submitQuiz = async (quizzes) => {
+    console.log(quizzes);
+  };
 
   return (
     <MainContext.Provider
-      value={{ quiz, user, modifyUser, submitQuiz, checkRegNumber }}
+      value={{ user, modifyUser, submitQuiz, checkRegNumber }}
     >
       {props.children}
     </MainContext.Provider>

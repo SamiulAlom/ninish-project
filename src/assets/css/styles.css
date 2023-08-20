@@ -31,3 +31,7 @@ body {
 .quizOption label:has(input:checked) {
   @apply bg-purple-900
 }
+
+.quizOption label:has(input:checked) span{
+  display: block;
+}
