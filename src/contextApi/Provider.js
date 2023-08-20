@@ -42,6 +42,7 @@ const ContextProvider = (props) => {
 
   const checkRegNumber = useCallback(async () => {
     if (user != null) {
+      return true;
     }
     return false;
   }, [user]);

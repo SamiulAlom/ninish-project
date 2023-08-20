@@ -7,7 +7,7 @@ export default function Layout({ children }) {
     <>
       <Navbar />
       {/* Tailwind ready */}
-      <div className="bg-zinc-500">{children}</div>
+      <div>{children}</div>
       <Footer />
     </>
   );
