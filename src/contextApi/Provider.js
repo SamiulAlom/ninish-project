@@ -5,6 +5,7 @@ import MainContext from "./MainContext";
 
 const ContextProvider = (props) => {
   const [user, setUser] = useState(null);
+  const [quizDone, setQuizDone] = useState(false);
 
   const baseUrl = process.env.REACT_APP_BASE_URL;
   const navigate = useNavigate();
@@ -23,7 +24,19 @@ const ContextProvider = (props) => {
     }
   }, []);
 
-  const modifyUser = (name, cls, institute, phone, regNumber) => {
+  const checkRegNumber = useCallback(async () => {
+    if (user != null) {
+      const res = await fetch(`${baseUrl}/check/${user.regNumber}`, {
+        method: "get",
+      });
+      const data = await res.json();
+      console.log(data);
+      return true;
+    }
+    return false;
+  }, [user, baseUrl]);
+
+  const modifyUser = async (name, cls, institute, phone, regNumber) => {
     setUser({
       name: name,
       cls: cls,
@@ -31,6 +44,8 @@ const ContextProvider = (props) => {
       phone: phone,
       regNumber: regNumber,
     });
+
+    await checkRegNumber(regNumber);
 
     localStorage.setItem(
       "user",
@@ -43,13 +58,6 @@ const ContextProvider = (props) => {
       })
     );
   };
-
-  const checkRegNumber = useCallback(async () => {
-    if (user != null) {
-      return true;
-    }
-    return false;
-  }, [user]);
 
   const submitQuiz = async (quizzes) => {
     try {

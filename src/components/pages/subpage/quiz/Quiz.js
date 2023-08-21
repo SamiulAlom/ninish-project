@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import MainContext from "../../../../contextApi/MainContext";
 import quizContext from "../../../../contextApi/QuizContext";
 import useQuizList from "../../../../hooks/useQuiz";
+import Counter from "../../Counter";
 import Question from "./Question";
 
 export default function Quiz() {
@@ -102,6 +103,11 @@ export default function Quiz() {
     );
   }
 
+  var date = new Date();
+
+  // add a day
+  date.setMinutes(date.getMinutes() + 45);
+
   return (
     <div className="min-h-[74vh] container mx-auto px-2">
       {!isLoading && !isError && quizzes.length > 0 && (
@@ -117,7 +123,7 @@ export default function Quiz() {
           <p className="mt-2 font-bold">অবশিষ্ট সময়ঃ ৩৫ মিনিট</p>
         </div>
       )}
-
+      <Counter deadline={date} />
       <form onSubmit={handleSubmit}>
         <quizContext.Provider value={{ handleQuizUpdate }}>
           {content}
