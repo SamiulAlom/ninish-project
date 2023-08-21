@@ -30,10 +30,10 @@ const ContextProvider = (props) => {
         method: "get",
       });
       const data = await res.json();
-      console.log(data);
-      return true;
+      if (data === 200) {
+        setQuizDone(true);
+      }
     }
-    return false;
   }, [user, baseUrl]);
 
   const modifyUser = async (name, cls, institute, phone, regNumber) => {
@@ -79,7 +79,7 @@ const ContextProvider = (props) => {
 
   return (
     <MainContext.Provider
-      value={{ user, modifyUser, submitQuiz, checkRegNumber }}
+      value={{ user, modifyUser, submitQuiz, checkRegNumber, quizDone }}
     >
       {props.children}
     </MainContext.Provider>
