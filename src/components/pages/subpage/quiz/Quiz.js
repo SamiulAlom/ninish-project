@@ -2,16 +2,13 @@ import _ from "lodash";
 import { Loader2 } from "lucide-react";
 import React, { useContext, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
-import { useParams } from "react-router-dom";
 import MainContext from "../../../../contextApi/MainContext";
 import quizContext from "../../../../contextApi/QuizContext";
 import useQuizList from "../../../../hooks/useQuiz";
-import Counter from "../../Counter";
 import Question from "./Question";
 
-export default function Quiz() {
-  const { id } = useParams();
-
+export default function Quiz({ id }) {
+  const [loading, setLoading] = useState(false);
   const { quizList, isLoading, isError } = useQuizList(id);
 
   const [quizzes, setQuizzes] = useState({});
@@ -66,9 +63,11 @@ export default function Quiz() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     if (checkFormat()) {
       await submitQuiz(quizzes);
     } else toast.error("সবগুলো প্রশ্নের উত্তর দিন!");
+    setLoading(false);
   };
 
   // Decide what to show
@@ -94,36 +93,18 @@ export default function Quiz() {
         <div>
           <button
             type="submit"
-            className="bg-[#3b1468] hover:bg-blue-700 text-white font-bold py-3 px-10 rounded-full"
+            className="bg-[#3b1468] hover:bg-blue-700 text-white font-bold py-3 px-7 rounded-full disabled:bg-slate-600"
+            disabled={loading}
           >
-            জমা দিন
+            {loading ? <Loader2 className="animate-spin" /> : "জমা দিন"}
           </button>
         </div>
       </div>
     );
   }
-
-  var date = new Date();
-
-  // add a day
-  date.setMinutes(date.getMinutes() + 45);
-
   return (
     <div className="min-h-[74vh] container mx-auto px-2">
-      {!isLoading && !isError && quizzes.length > 0 && (
-        <div className="text-center mb-4">
-          <h1 className="text-[28px] text-[#3D007D] py-3 text-center font-bold">
-            মুজিব অলিম্পিয়াড ২০২৩ - গাজীপুর পর্ব
-          </h1>
-          <p className="mb-2 font-bold">প্রাথমিক(৩য়,৪র্থ,৫ম)</p>
-          <p className="flex justify-center gap-4">
-            <span>মোট প্রশ্নঃ ৪০ টি</span>
-            <span>মোট সময়ঃ ৩৫ মিনিট</span>
-          </p>
-          <p className="mt-2 font-bold">অবশিষ্ট সময়ঃ ৩৫ মিনিট</p>
-        </div>
-      )}
-      <Counter deadline={date} />
+      {/* Form */}
       <form onSubmit={handleSubmit}>
         <quizContext.Provider value={{ handleQuizUpdate }}>
           {content}

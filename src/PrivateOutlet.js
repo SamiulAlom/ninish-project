@@ -1,18 +1,19 @@
 import { useContext, useEffect } from "react";
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import MainContext from "./contextApi/MainContext";
 
-export default function PrivateOutlet() {
-  const { user, checkRegNumber, quizDone } = useContext(MainContext);
+export default function PrivateOutlet({ children }) {
+  const { user, checkQuizDone, quizDone } = useContext(MainContext);
+  console.log("here");
 
   useEffect(() => {
     const ck = async () => {
-      return await checkRegNumber();
+      return await checkQuizDone();
     };
-    if (user != null) {
+    if (user != null && !quizDone) {
       ck();
     }
-  }, [checkRegNumber, user]);
+  }, [checkQuizDone, user, quizDone]);
 
-  return !quizDone ? <Outlet /> : <Navigate to="/mujib-olympiad" />;
+  return quizDone ? children : <Navigate to="/mujib-olympiad" />;
 }

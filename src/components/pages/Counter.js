@@ -1,11 +1,9 @@
 import moment from "moment/moment";
 import Countdown from "react-countdown";
 
-const Counter = ({ deadline }) => {
-  console.log(deadline);
+const Counter = ({ deadline, totalTime, quizId }) => {
   const deadlineTimestamp = moment(Date.parse(deadline));
   const currentTimestamp = moment(Date.now());
-  // const timeDiff = currentTimestamp.diff(deadlineTimestamp);
   const timeDiff = deadlineTimestamp.diff(currentTimestamp);
 
   const renderer = ({ days, hours, minutes, seconds, completed }) => {
@@ -16,21 +14,19 @@ const Counter = ({ deadline }) => {
       // Render a countdown
       let content = "";
       if (minutes) {
-        content += `${minutes} `;
-        if (minutes > 1) content += "minutes ";
-        else content += "minute ";
-      }
+        localStorage.setItem(`totalTime_${quizId}`, minutes);
+        content += `${minutes} মিনিট `;
+      } else localStorage.setItem(`totalTime_${quizId}`, 0);
       if (seconds) {
-        content += `${seconds} `;
-        if (seconds > 1) content += "seconds ";
-        else content += "second ";
-      }
-      return <span>{content} left</span>;
+        localStorage.setItem(`seconds_${quizId}`, seconds);
+        content += `${seconds} সেকেন্ড `;
+      } else localStorage.setItem(`seconds_${quizId}`, 0);
+      return <span>{content} বাকি</span>;
     }
   };
 
   const handleComplete = () => {
-    console.log("here");
+    console.log(quizId);
   };
 
   return (

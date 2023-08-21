@@ -24,8 +24,25 @@ const ContextProvider = (props) => {
     }
   }, []);
 
-  const checkRegNumber = useCallback(async () => {
-    if (user != null) {
+  const checkRegNumber = useCallback(
+    async (regNumber) => {
+      if (user != null) {
+        const res = await fetch(`${baseUrl}/checkReg/${regNumber}`, {
+          method: "get",
+        });
+        const data = await res.json();
+        if (data === 200) {
+          return true;
+        }
+        toast.error("আপনার রেজিস্ট্রেশন নম্বরটি ভুল");
+        return false;
+      }
+    },
+    [user, baseUrl]
+  );
+
+  const checkQuizDone = useCallback(async () => {
+    if (user != null && !quizDone) {
       const res = await fetch(`${baseUrl}/check/${user.regNumber}`, {
         method: "get",
       });
@@ -34,7 +51,7 @@ const ContextProvider = (props) => {
         setQuizDone(true);
       }
     }
-  }, [user, baseUrl]);
+  }, [user, baseUrl, quizDone]);
 
   const modifyUser = async (name, cls, institute, phone, regNumber) => {
     setUser({
@@ -44,8 +61,6 @@ const ContextProvider = (props) => {
       phone: phone,
       regNumber: regNumber,
     });
-
-    await checkRegNumber(regNumber);
 
     localStorage.setItem(
       "user",
@@ -60,16 +75,20 @@ const ContextProvider = (props) => {
   };
 
   const submitQuiz = async (quizzes) => {
+    let data = {
+      quizzes: quizzes,
+      user: user,
+    };
     try {
       await fetch(`${baseUrl}/submit`, {
         method: "post",
-        body: JSON.stringify(quizzes),
+        body: JSON.stringify(data),
         headers: {
           "Content-Type": "application/json",
         },
       });
       toast.success("আপনার উত্তর সফলভাবে জমা হয়েছে। ধন্যবাদ।");
-      setTimeout(() => {
+      setInterval(() => {
         navigate("/certificate");
       }, 2000);
     } catch {
@@ -79,7 +98,14 @@ const ContextProvider = (props) => {
 
   return (
     <MainContext.Provider
-      value={{ user, modifyUser, submitQuiz, checkRegNumber, quizDone }}
+      value={{
+        user,
+        modifyUser,
+        submitQuiz,
+        checkQuizDone,
+        quizDone,
+        checkRegNumber,
+      }}
     >
       {props.children}
     </MainContext.Provider>

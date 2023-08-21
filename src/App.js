@@ -13,7 +13,7 @@ import Category from "./components/pages/subpage/Category";
 import Certificate from "./components/pages/subpage/Certificate";
 import Download from "./components/pages/subpage/Download";
 import Form from "./components/pages/subpage/Form";
-import Quiz from "./components/pages/subpage/quiz/Quiz";
+import QuizLayout from "./components/pages/subpage/quiz/QuizLayout";
 import ContextProvider from "./contextApi/Provider";
 
 function App() {
@@ -28,17 +28,57 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/online-batch" element={<Batch />} />
             {/* Pages that only visible to users who hasn't completed quiz */}
-            <Route path="/*" element={<PublicOutlet />}>
-              <Route path="mujib-olympiad" element={<QuizPage />} />
-              <Route path="form" element={<Form />} />
-              <Route path="categories" element={<Category />} />
-              <Route path="quiz/:id" element={<Quiz />} />
-            </Route>
+
+            <Route
+              path="mujib-olympiad"
+              element={
+                <PublicOutlet>
+                  <QuizPage />
+                </PublicOutlet>
+              }
+            />
+            <Route
+              path="form"
+              element={
+                <PublicOutlet>
+                  <Form />
+                </PublicOutlet>
+              }
+            />
+            <Route
+              path="categories"
+              element={
+                <PublicOutlet>
+                  <Category />
+                </PublicOutlet>
+              }
+            />
+            <Route
+              path="quiz/:id"
+              element={
+                <PublicOutlet>
+                  <QuizLayout />
+                </PublicOutlet>
+              }
+            />
             {/* Pages that only visible to users who completed quiz */}
-            <Route path="/*" element={<PrivateOutlet />}>
-              <Route path="certificate" element={<Certificate />} />
-              <Route path="download" element={<Download />} />
-            </Route>
+
+            <Route
+              path="certificate"
+              element={
+                <PrivateOutlet>
+                  <Certificate />
+                </PrivateOutlet>
+              }
+            />
+            <Route
+              path="download"
+              element={
+                <PrivateOutlet>
+                  <Download />
+                </PrivateOutlet>
+              }
+            />
           </Routes>
         </Layout>
       </ContextProvider>

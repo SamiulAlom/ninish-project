@@ -1,10 +1,11 @@
+import { Loader2 } from "lucide-react";
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MainContext from "../../../contextApi/MainContext";
 
 export default function Form() {
   const mainContext = useContext(MainContext);
-  const { user, modifyUser } = mainContext;
+  const { user, modifyUser, checkRegNumber } = mainContext;
 
   const navigate = useNavigate();
 
@@ -15,7 +16,7 @@ export default function Form() {
     phone: "",
     regNumber: "",
   });
-
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     if (user != null) {
       setFormData({
@@ -28,8 +29,9 @@ export default function Form() {
     }
   }, [user]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     modifyUser(
       formData.name,
       formData.cls,
@@ -37,7 +39,11 @@ export default function Form() {
       formData.phone,
       formData.regNumber
     );
-    navigate("/categories");
+    const res = await checkRegNumber(formData.regNumber);
+    if (res) {
+      navigate("/categories");
+    }
+    setLoading(false);
   };
 
   return (
@@ -115,9 +121,10 @@ export default function Form() {
           <button
             type="submit"
             value="Submit"
-            className="bg-[#3b1468] hover:bg-blue-700 text-white font-bold py-3 px-7 rounded-full"
+            className="bg-[#3b1468] hover:bg-blue-700 text-white font-bold py-3 px-7 rounded-full disabled:bg-slate-600"
+            disabled={loading}
           >
-            পরবর্তী
+            {loading ? <Loader2 className="animate-spin" /> : "পরবর্তী"}
           </button>
         </div>
       </form>
