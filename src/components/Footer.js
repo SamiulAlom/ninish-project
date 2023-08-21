@@ -2,7 +2,11 @@ import React from "react";
 import images from "../images/logo.png";
 export default function Navbar() {
   return (
-    <footer className="flex flex-wrap pt-10 pb-7 items-center sm:justify-around space-x-4 text-[#fff] bg-[#3D007D]">
+    <footer
+      className="flex flex-wrap pt-10 pb-7 items-center sm:justify-around space-x-4 text-[#fff] bg-[#3D007D]    @media print {
+      no-print
+  }"
+    >
       <div className="max-[600px]:p-5 ">
         <a href="/">
           <img src={images} alt="logo" className="w-27 h-20" />

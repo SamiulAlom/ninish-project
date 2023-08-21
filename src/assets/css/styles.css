@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Courgette&family=Noto+Sans+Bengali:wght@300;400;500;700&family=Poppins:wght@400;500;600;700;900&family=Tiro+Bangla&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Courgette&family=Poppins:wght@400;500;600;700;900&display=swap");
@@ -34,4 +35,19 @@ body {
 
 .quizOption label:has(input:checked) span{
   display: block;
+}
+
+.certificate-name{
+  font-size: 40px;
+  display: none;
+}
+
+@media print {
+  .certificate-name{
+    font-family: 'Great Vibes', cursive!important;
+    display: block;
+  }
+  .no-print {
+      display: none !important;
+  }
 }
