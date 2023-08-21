@@ -62,7 +62,7 @@ const ContextProvider = (props) => {
       });
       toast.success("আপনার উত্তর সফলভাবে জমা হয়েছে। ধন্যবাদ।");
       setTimeout(() => {
-        navigate("/");
+        navigate("/certificate");
       }, 2000);
     } catch {
       toast.error("অসুবিধার জন্য দুঃখিত। আবার চেষ্টা করুন।");
