@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import MainContext from "../../../contextApi/MainContext";
 import img from "../../../images/Certificate.jpg";
+import { ThumbsUp } from "lucide-react";
 
 export default function Download() {
   const { user } = useContext(MainContext);
@@ -46,11 +47,12 @@ export default function Download() {
             </button>
             <p
               id="text"
-              className={`p-10 pl-20 pr-20 rounded-lg bg-green-700 ${
+              className={`p-5 flex text-white font-semibold mb-20 pl-20 pr-20 rounded-lg bg-green-700 ${
                 text ? "block" : "hidden"
               }`}
             >
-              আপনি সফল ভাবে বৃত্তির জন্য আবেদন করেছেন
+              আপনি সফল ভাবে বৃত্তির জন্য আবেদন করেছেন{" "}
+              <ThumbsUp className="ml-3" />
             </p>
           </div>
         </div>
