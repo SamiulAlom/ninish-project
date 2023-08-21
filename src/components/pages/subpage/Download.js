@@ -4,14 +4,13 @@ import img from "../../../images/Certificate.jpg";
 
 export default function Download() {
   const { user } = useContext(MainContext);
-  const { text, setText } = useState(false);
+  const [text, setText] = useState(false);
 
   const handleClick = () => {
     window.print();
   };
   const show = () => {
-    const newText = (getId.style.display = "block");
-    setText(newText);
+    setText(true);
   };
 
   return (
@@ -38,14 +37,18 @@ export default function Download() {
           <div className="no-print">
             <button
               id="btn"
-              className="bg-[#3b1468]  hover:bg-blue-700 text-white font-bold py-3 px-10 mb-10 rounded-full"
-              onClick={show()}
+              className={`bg-[#3b1468]  hover:bg-blue-700 text-white font-bold py-3 px-10 mb-10 rounded-full ${
+                text ? "hidden" : "block"
+              }`}
+              onClick={show}
             >
               বৃত্তি এর জন্য আবেদন করতে এখানে ক্লিক করুন
             </button>
             <p
               id="text"
-              className="p-10 pl-20 pr-20 rounded-lg hidden bg-green-700"
+              className={`p-10 pl-20 pr-20 rounded-lg bg-green-700 ${
+                text ? "block" : "hidden"
+              }`}
             >
               আপনি সফল ভাবে বৃত্তির জন্য আবেদন করেছেন
             </p>
