@@ -27,17 +27,18 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/online-batch" element={<Batch />} />
-            {/* Pages that only */}
+            {/* Pages that only visible to users who hasn't completed quiz */}
             <Route path="/*" element={<PublicOutlet />}>
               <Route path="mujib-olympiad" element={<QuizPage />} />
               <Route path="form" element={<Form />} />
               <Route path="categories" element={<Category />} />
               <Route path="quiz/:id" element={<Quiz />} />
             </Route>
+            {/* Pages that only visible to users who completed quiz */}
             <Route path="/*" element={<PrivateOutlet />}>
               <Route path="certificate" element={<Certificate />} />
+              <Route path="download" element={<Download />} />
             </Route>
-            <Route path="/download" element={<Download />} />
           </Routes>
         </Layout>
       </ContextProvider>
