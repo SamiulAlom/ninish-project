@@ -29,6 +29,17 @@ export default function Download() {
             প্রিন্ট করুন
           </button>
         </div>
+        <div className="flex justify-center">
+          <div>
+            <button
+              className="bg-[#3b1468]  hover:bg-blue-700 text-white font-bold py-3 px-10 mb-10 rounded-full"
+              onClick={handleClick}
+            >
+              বৃত্তি এর জন্য আবেদন করতে এখানে ক্লিক করুন
+            </button>
+            <p className="p-10">আপনি সফল ভাবে বৃত্তির জন্য আবেদন করেছেন</p>
+          </div>
+        </div>
       </div>
     </div>
   );
