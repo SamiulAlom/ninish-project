@@ -14,5 +14,5 @@ export default function PrivateOutlet() {
     }
   }, [checkRegNumber, user]);
 
-  return quizDone ? <Outlet /> : <Navigate to="/mujib-olympiad" />;
+  return !quizDone ? <Outlet /> : <Navigate to="/mujib-olympiad" />;
 }
