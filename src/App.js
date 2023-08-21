@@ -8,9 +8,11 @@ import Contact from "./components/pages/Contact";
 import Landing from "./components/pages/Landing";
 import QuizPage from "./components/pages/QuizPage";
 import Category from "./components/pages/subpage/Category";
+import Certificate from "./components/pages/subpage/Certificate";
 import Form from "./components/pages/subpage/Form";
 import Quiz from "./components/pages/subpage/quiz/Quiz";
 import ContextProvider from "./contextApi/Provider";
+import Download from "./components/pages/subpage/Download";
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
             <Route path="/form" element={<Form />} />
             <Route path="/categories" element={<Category />} />
             <Route path="/quiz/:id" element={<Quiz />} />
+            <Route path="/certificate" element={<Certificate />} />
+            <Route path="/download" element={<Download />} />
           </Routes>
         </Layout>
       </ContextProvider>
