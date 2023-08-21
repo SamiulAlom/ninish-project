@@ -1,18 +1,17 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import MainContext from "../../../contextApi/MainContext";
 import img from "../../../images/Certificate.jpg";
 
 export default function Download() {
   const { user } = useContext(MainContext);
+  const { text, setText } = useState(false);
 
   const handleClick = () => {
     window.print();
   };
   const show = () => {
-    const getId = document.getElementById("text");
-    const getBtn = document.getElementById("btn");
-    getId.style.display = "block";
-    getBtn.style.display = "none";
+    const newText = (getId.style.display = "block");
+    setText(newText);
   };
 
   return (
