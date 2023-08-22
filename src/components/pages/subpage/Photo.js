@@ -11,7 +11,7 @@ export default function Photo() {
           মুজিব অলিম্পিয়াড ২০২৩ এর অন্যান্য বিভাগ সমূহ
         </h3>
       </div>
-      <div className="w-full max-w-5xl p-5 pb-10 mx-auto mb-10 gap-5 columns-2 space-y-5">
+      <div className="w-full max-w-5xl mx-auto mb-10 gap-3 md:columns-2 space-y-3">
         <img src={img1} className="rounded-xl" alt="" />
         <img src={img2} className="rounded-xl" alt="" />
         <img src={img3} className="rounded-xl" alt="" />

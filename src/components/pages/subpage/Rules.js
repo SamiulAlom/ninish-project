@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 export default function Rules() {
   return (
     <div className="pb-10 bg-white flex justify-center">
-      <div className="pt-10 container grid gap-2 px-2">
+      <div className="pt-10 container grid gap-4 px-2 text-justify">
         <h1 className="text-[28px] text-[#3D007D] pb-3 text-center font-bold">
           মুজিব অলিম্পিয়াড ২০২৩ - গাজীপুর পর্ব
         </h1>
         <h3 className="text-1xl pb-5 text-center">
-          ( নিম্ন লিখিত নির্দেশিকাসমূহ মনোযোগ সহকারে পড়া বাধ্যতামূলক )
+          <b>( নিম্ন লিখিত নির্দেশিকাসমূহ মনোযোগ সহকারে পড়া বাধ্যতামূলক )</b>
         </h3>
         <p>
           ১. 'পরবর্তী' বাটনে ক্লিক করে প্রথমে আপনার নাম, শিক্ষা প্রতিষ্ঠান,
@@ -45,7 +45,7 @@ export default function Rules() {
           পরবর্তী পেজে আপনার ‘সার্টিফিকেট অফ পার্টিসিপেশন’ টি ডাউনলোড করে নিবেন
           এবং বৃত্তির জন্য আবেদন করুন।
         </p>
-        <p>৬. প্রতিটি ভুল উত্তরের জন্য ০.২৫ মার্কস কাটা যাবে।</p>
+        <p>৬. প্রতিটি ভুল উত্তরের জন্য ০.৩ মার্কস কাটা যাবে।</p>
         <p>
           ৭. প্রতিযোগিতা চলাকালীন আপনার 'স্মার্টফোন/কম্পিউটার' এর অন্য কোন ট্যাব
           ওপেন করে নকলের চেষ্টা করলে আপনার প্রতিযোগিতাটি বাতিল বলে গন্য হবে।
@@ -58,10 +58,10 @@ export default function Rules() {
         <p>
           ১০. নিচে উল্লেখিত 'পরবর্তী' বাটনে ক্লিক করার মাধম্যে আপনি 'মুজিব
           অলিম্পিয়াড - গাজীপুর' পর্বে প্রবেশ করবেন, তাই কোন কিছু না বুঝে থাকলে
-          যোগাযোগ করুন নিচে দেওয়া নাম্বারে। ০১৭৯৩০০০৮৭৩, ০১৩০৩৩৫১৩৪১,
-          ০১৭২২৮৪২৫৬৪
+          যোগাযোগ করুন নিচে দেওয়া নাম্বারে। <b>০১৭৯৩০০০৮৭৩</b>,{" "}
+          <b>০১৩০৩৩৫১৩৪১</b>, <b>০১৭২২৮৪২৫৬৪</b>
         </p>
-        <span className="flex justify-center pt-10">
+        <span className="flex justify-center pt-10 pb-5">
           <Link
             to="/form"
             className="bg-[#3b1468] hover:bg-blue-700 text-white font-bold py-3 px-10 rounded-full"

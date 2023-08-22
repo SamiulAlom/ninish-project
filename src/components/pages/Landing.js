@@ -6,7 +6,7 @@ import Work from "./subpage/Work";
 
 export default function Landing() {
   return (
-    <div className="max-sm:p-5 bg-white" style={{ fontFamily: "Tiro Bangla" }}>
+    <div className="bg-white" style={{ fontFamily: "Tiro Bangla" }}>
       <Banner />
       <Photo />
       <Ninis />

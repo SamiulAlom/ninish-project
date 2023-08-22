@@ -11,11 +11,14 @@ export default function Navbar() {
           </Link>
           <h3>A Co-curricular Ed-Tech Platform</h3>
         </div>
-        <div>
-          <p>যোগাযোগ </p>
-          <br />
-          <p>ফোন: +০১৭৯৩০০০৮৭৩</p>
-          <p>ইমেইল: info@ninish.com</p>
+        <div className="mt-4 md:mb-0">
+          <p className="mb-2 md:mb-0">যোগাযোগ </p>
+          <p>
+            ফোন: <a href="tel:01793000873">+০১৭৯৩০০০৮৭৩</a>
+          </p>
+          <p>
+            ইমেইল: <a href="mailto:info@ninish.com">info@ninish.com</a>
+          </p>
         </div>
       </div>
     </footer>
