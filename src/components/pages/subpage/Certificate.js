@@ -1,3 +1,4 @@
+import { BadgeCheck } from "lucide-react";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -10,6 +11,9 @@ export default function Certificate() {
       <div className=" w-full text-center container ">
         <div>
           {" "}
+          <div className="flex justify-center">
+            <BadgeCheck className="text-green-500 mb-4" size={48} />
+          </div>
           <h1 className="text-[#3b1468] font-bold pb-10 ">
             আপনি সফল ভাবে পরীক্ষা দিয়েছেন !
           </h1>

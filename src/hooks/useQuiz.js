@@ -10,70 +10,11 @@ export default function useQuizList(category_id) {
   useEffect(() => {
     async function fetchData() {
       try {
-        // const res = await fetch(`${baseUrl}/quizzes/${category_id}`, {
-        //   method: "get",
-        // });
-        // const data = await res.json();
-        setQuizList([
-          {
-            id: 2,
-            options: [
-              {
-                id: 5,
-                title: "Hypertext Machine language",
-                isCorrect: false,
-              },
-              {
-                id: 6,
-                title: "Hypertext and links markup language",
-                isCorrect: false,
-              },
-              {
-                id: 7,
-                title: "Hypertext Markup Language",
-                isCorrect: true,
-              },
-              {
-                id: 8,
-                title: "Hightext machine language",
-                isCorrect: false,
-              },
-            ],
-            category: {
-              name: "web",
-            },
-            question: "What does HTML stand for?",
-          },
-          {
-            id: 3,
-            options: [
-              {
-                id: 9,
-                title: "Hypertext Machine language",
-                isCorrect: false,
-              },
-              {
-                id: 10,
-                title: "Hypertext and links markup language",
-                isCorrect: false,
-              },
-              {
-                id: 11,
-                title: "Hypertext Markup Language",
-                isCorrect: true,
-              },
-              {
-                id: 12,
-                title: "Hightext machine language",
-                isCorrect: false,
-              },
-            ],
-            category: {
-              name: "web",
-            },
-            question: "What does HTML stand for?",
-          },
-        ]);
+        const res = await fetch(`${baseUrl}/quizzes/${category_id}`, {
+          method: "get",
+        });
+        const data = await res.json();
+        setQuizList(data);
         setIsLoading(false);
       } catch (err) {
         setIsError(true);

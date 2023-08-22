@@ -11,6 +11,8 @@ export default function QuizLayout() {
   );
   const [seconds, setSeconds] = useState(0);
   const [ready, setReady] = useState(false);
+  const [gotQuiz, setGotQuiz] = useState(false);
+  const [forceQuizSubmit, setForceQuizSubmit] = useState(false);
 
   useEffect(() => {
     setReady(false);
@@ -72,13 +74,18 @@ export default function QuizLayout() {
         <div className="mt-2 font-bold">
           অবশিষ্ট সময়ঃ
           {/* Time Counter */}
-          {ready && (
-            <Counter deadline={timeLeft} totalTime={totalTime} quizId={id} />
+          {ready && gotQuiz && (
+            <Counter
+              deadline={timeLeft}
+              totalTime={totalTime}
+              quizId={id}
+              setForceQuizSubmit={setForceQuizSubmit}
+            />
           )}
         </div>
       </div>
       {/* Form */}
-      <Quiz id={id} />
+      <Quiz setGotQuiz={setGotQuiz} id={id} forceQuizSubmit={forceQuizSubmit} />
     </div>
   );
 }

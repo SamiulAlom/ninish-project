@@ -57,6 +57,8 @@ const ContextProvider = (props) => {
       quizDone: quizDone,
     });
 
+    localStorage.clear();
+
     localStorage.setItem(
       "user",
       JSON.stringify({
@@ -77,26 +79,31 @@ const ContextProvider = (props) => {
     };
     try {
       if (user != null) {
-        await fetch(`${baseUrl}/submit`, {
+        const res = await fetch(`${baseUrl}/submit`, {
           method: "post",
           body: JSON.stringify(data),
           headers: {
             "Content-Type": "application/json",
           },
         });
-        setUser({ ...user, quizDone: true });
-        localStorage.setItem(
-          "user",
-          JSON.stringify({
-            name: user.name,
-            cls: user.cls,
-            institute: user.institute,
-            phone: user.phone,
-            regNumber: user.regNumber,
-            quizDone: true,
-          })
-        );
-        toast.success("আপনার উত্তর সফলভাবে জমা হয়েছে। ধন্যবাদ।");
+        if (res.status === 200) {
+          setUser({ ...user, quizDone: true });
+          localStorage.setItem(
+            "user",
+            JSON.stringify({
+              name: user.name,
+              cls: user.cls,
+              institute: user.institute,
+              phone: user.phone,
+              regNumber: user.regNumber,
+              quizDone: true,
+            })
+          );
+          toast.success("আপনার উত্তর সফলভাবে জমা হয়েছে। ধন্যবাদ।");
+        }
+        if (res.status === 406) {
+          toast.error("দুঃখিত সময় শেষ হয়ে গিয়েছে।");
+        }
       } else toast.error("অসুবিধার জন্য দুঃখিত। আবার চেষ্টা করুন।");
     } catch {
       toast.error("অসুবিধার জন্য দুঃখিত। আবার চেষ্টা করুন।");

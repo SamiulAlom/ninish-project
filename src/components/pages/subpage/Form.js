@@ -47,8 +47,8 @@ export default function Form() {
   };
 
   return (
-    <div className="form flex justify-center bg-white pt-20 pr-20 pl-20">
-      <form onSubmit={handleSubmit}>
+    <div className="form flex justify-center bg-white pt-20">
+      <form className="max-w-[768px] w-full px-2" onSubmit={handleSubmit}>
         <div className="pb-10">
           <label htmlFor="">নামঃ</label>
           <input
@@ -56,7 +56,7 @@ export default function Form() {
             required
             placeholder="Enter your name"
             type="text"
-            className="rounded text-[#000] mt-3 block w-[50vw] p-3 bg-purple-100"
+            className="rounded text-black mt-3 w-full p-3 bg-purple-100"
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           />
@@ -68,7 +68,7 @@ export default function Form() {
             required
             placeholder="Enter your className"
             type="text"
-            className="rounded text-[#000] mt-3 block w-[50vw] p-3 bg-purple-100"
+            className="rounded text-black mt-3 w-full p-3 bg-purple-100"
             value={formData.cls}
             onChange={(e) => setFormData({ ...formData, cls: e.target.value })}
           />
@@ -80,7 +80,7 @@ export default function Form() {
             required
             placeholder="Enter your institute name"
             type="text"
-            className="rounded text-[#000] mt-3 block w-[50vw] p-3 bg-purple-100"
+            className="rounded text-black mt-3 w-full p-3 bg-purple-100"
             value={formData.institute}
             onChange={(e) =>
               setFormData({ ...formData, institute: e.target.value })
@@ -94,7 +94,7 @@ export default function Form() {
             required
             placeholder="Enter your phone number"
             type="text"
-            className="rounded text-[#000] mt-3 block w-[50vw] p-3 bg-purple-100"
+            className="rounded text-black mt-3 w-full p-3 bg-purple-100"
             value={formData.phone}
             onChange={(e) =>
               setFormData({ ...formData, phone: e.target.value })
@@ -110,7 +110,7 @@ export default function Form() {
             required
             placeholder="Enter your registration number"
             type="text"
-            className="rounded text-[#000] mt-3 block w-[50vw] p-3 bg-purple-100"
+            className="rounded text-black mt-3 w-full p-3 bg-purple-100"
             value={formData.regNumber}
             onChange={(e) =>
               setFormData({ ...formData, regNumber: e.target.value })

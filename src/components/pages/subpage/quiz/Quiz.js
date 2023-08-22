@@ -7,7 +7,7 @@ import quizContext from "../../../../contextApi/QuizContext";
 import useQuizList from "../../../../hooks/useQuiz";
 import Question from "./Question";
 
-export default function Quiz({ id }) {
+export default function Quiz({ setGotQuiz, id, forceQuizSubmit }) {
   const [loading, setLoading] = useState(false);
   const { quizList, isLoading, isError } = useQuizList(id);
 
@@ -23,6 +23,7 @@ export default function Quiz({ id }) {
       options.map((option) => (option.isSelected = false));
     });
     setQuizzes(modQuizzes);
+    if (modQuizzes.length > 0) setGotQuiz(true);
   };
 
   // Watch for successful data fetch from server
@@ -30,6 +31,7 @@ export default function Quiz({ id }) {
     if (!isLoading && !isError) {
       initializeState(quizList);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [quizList, isLoading, isError]);
 
   // Watch for data fetch error
@@ -69,6 +71,19 @@ export default function Quiz({ id }) {
     } else toast.error("সবগুলো প্রশ্নের উত্তর দিন!");
     setLoading(false);
   };
+
+  const handleForceSubmit = async () => {
+    setLoading(true);
+    await submitQuiz(quizzes);
+    setLoading(false);
+  };
+
+  // Force submit quiz on time complete
+  useEffect(() => {
+    if (forceQuizSubmit) {
+      handleForceSubmit();
+    }
+  }, [forceQuizSubmit]);
 
   // Decide what to show
   let content = null;
