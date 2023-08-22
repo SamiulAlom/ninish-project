@@ -8,7 +8,7 @@ export default function Navbar() {
         <div className="flex sm:block justify-center">
           <Link to="/">
             {" "}
-            <img className="w-27 h-20" src={images} alt="logo" />
+            <img className=" w-27 h-20" src={images} alt="logo" />
           </Link>
         </div>
         <div className="flex flex-wrap items-center justify-center sm:justify-end gap-1  w-full">
