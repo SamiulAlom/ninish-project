@@ -50,6 +50,9 @@ export default function Form() {
     <div className="form flex justify-center bg-white pt-20">
       <form className="max-w-[768px] w-full px-2" onSubmit={handleSubmit}>
         <div className="pb-10">
+          <h1 className="text-[28px] text-[#3D007D] pb-3 text-center font-bold">
+            মুজিব অলিম্পিয়াড ২০২৩ - গাজীপুর পর্ব
+          </h1>
           <label htmlFor="">নামঃ</label>
           <input
             id="name"
