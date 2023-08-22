@@ -4,7 +4,7 @@ import images from "../images/logo.png";
 export default function Navbar() {
   return (
     <nav className="py-2 items-center bg-gradient-to-l from-[#e2dede] to-[#e9e3e3] no-print">
-      <div className="container block sm:flex sm:justify-between mx-auto">
+      <div className="container block px-2 md:px-6 sm:flex sm:justify-between mx-auto">
         <div className="flex sm:block justify-center">
           <Link to="/">
             {" "}
