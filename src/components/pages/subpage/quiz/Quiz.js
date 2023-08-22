@@ -101,20 +101,22 @@ export default function Quiz({ setGotQuiz, id, forceQuizSubmit }) {
     );
   } else if (!isError && quizzes.length > 0) {
     content = (
-      <div className="quiz-container grid xl:grid-cols-2 gap-4 mb-2">
-        {quizzes.map((quiz, ind) => (
-          <Question key={quiz.id} quiz={quiz} quizNumber={ind} />
-        ))}
+      <>
+        <div className="quiz-container grid xl:grid-cols-2 gap-4 mb-2">
+          {quizzes.map((quiz, ind) => (
+            <Question key={quiz.id} quiz={quiz} quizNumber={ind} />
+          ))}
+        </div>
         <div>
           <button
             type="submit"
-            className="bg-[#3b1468] hover:bg-blue-700 text-white font-bold py-3 px-7 rounded-full disabled:bg-slate-600"
+            className="bg-[#3b1468] hover:bg-blue-700 text-white font-bold py-3 px-7 rounded-full disabled:bg-slate-600 mt-2"
             disabled={loading}
           >
             {loading ? <Loader2 className="animate-spin" /> : "জমা দিন"}
           </button>
         </div>
-      </div>
+      </>
     );
   }
   return (

@@ -5,7 +5,7 @@ export default function Category() {
   return (
     <div className="flex justify-center bg-white">
       <div className="form text-[18px] bg-white p-20">
-        <h1 className="text-[28px] text-[#3D007D] pb-3 text-center font-bold">
+        <h1 className="text-[28px] text-[#3D007D] pb-3 text-center font-bold mb-3">
           মুজিব অলিম্পিয়াড ২০২৩ - গাজীপুর পর্ব
         </h1>
         <Link to={`/quiz/${1}`}>
