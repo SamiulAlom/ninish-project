@@ -1,7 +1,7 @@
+import { ThumbsUp } from "lucide-react";
 import React, { useContext, useState } from "react";
 import MainContext from "../../../contextApi/MainContext";
 import img from "../../../images/Certificate.jpg";
-import { ThumbsUp } from "lucide-react";
 
 export default function Download() {
   const { user } = useContext(MainContext);
@@ -15,13 +15,13 @@ export default function Download() {
   };
 
   return (
-    <div className=" justify-center flex">
+    <div className="justify-center flex certificate-container">
       <div>
-        <div className="w-[950px] mt-10 relative">
+        <div className="w-[900px] mt-10 relative img-container">
           <img src={img} alt="certificate" />
         </div>
         <span
-          style={{ top: "270px", left: "35vw" }}
+          style={{ top: "257px", left: "35vw" }}
           className="absolute from-neutral-700 text-[20px] text-black certificate-name"
         >
           {user?.name}

@@ -21,7 +21,7 @@ export default function Work() {
             </div>
           </div>
         </div>
-        <div className="text-white pb-10 mt-8 bg-[#686464]">
+        <div className="text-white pb-10 mt-8 bg-[#686464] rounded-xl">
           <h1 className="text-1xl pt-10 pb-5 text-center font-bold">
             সহযোগিতায়
           </h1>

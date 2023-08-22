@@ -28,9 +28,8 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/online-batch" element={<Batch />} />
             {/* Pages that only visible to users who hasn't completed quiz */}
-
             <Route
-              path="mujib-olympiad"
+              path="/mujib-olympiad"
               element={
                 <PublicOutlet>
                   <QuizPage />
@@ -38,7 +37,7 @@ function App() {
               }
             />
             <Route
-              path="form"
+              path="/form"
               element={
                 <PublicOutlet>
                   <Form />
@@ -46,7 +45,7 @@ function App() {
               }
             />
             <Route
-              path="categories"
+              path="/categories"
               element={
                 <PublicOutlet>
                   <Category />
@@ -54,7 +53,7 @@ function App() {
               }
             />
             <Route
-              path="quiz/:id"
+              path="/quiz/:id"
               element={
                 <PublicOutlet>
                   <QuizLayout />
@@ -64,7 +63,7 @@ function App() {
             {/* Pages that only visible to users who completed quiz */}
 
             <Route
-              path="certificate"
+              path="/certificate"
               element={
                 <PrivateOutlet>
                   <Certificate />
@@ -72,7 +71,7 @@ function App() {
               }
             />
             <Route
-              path="download"
+              path="/download"
               element={
                 <PrivateOutlet>
                   <Download />

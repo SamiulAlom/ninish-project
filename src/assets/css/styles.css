@@ -37,6 +37,10 @@ body {
   display: block;
 }
 
+.certificate-container{
+  font-family: 'Great Vibes', cursive!important;
+}
+
 .certificate-name{
   font-size: 40px;
   display: none;
@@ -44,10 +48,14 @@ body {
 
 @media print {
   .certificate-name{
-    font-family: 'Great Vibes', cursive!important;
     display: block;
   }
   .no-print {
       display: none !important;
   }
+}
+
+.img-container img {
+  object-fit: cover;
+  width: 100%;
 }

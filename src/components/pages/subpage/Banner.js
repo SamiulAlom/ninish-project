@@ -43,12 +43,9 @@ export default function Banner() {
                   মুজিব অলিম্পিয়াড ২০২৩ - গাজীপুর পর্বে অংশগ্রহণ করতে
                 </h1>
 
-                <Link
-                  to="/mujib-olympiad"
-                  className="bg-[#3b1468] hover:bg-blue-700 text-white text-[18px] font-bold py-3 px-6 rounded-full"
-                >
+                <button className="bg-[#3b1468] hover:bg-blue-700 text-white text-[18px] font-bold py-3 px-6 rounded-full">
                   এখানে ক্লিক করুন
-                </Link>
+                </button>
               </div>
             </div>
           </Link>

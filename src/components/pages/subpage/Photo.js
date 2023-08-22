@@ -12,10 +12,10 @@ export default function Photo() {
         </h3>
       </div>
       <div className="w-full max-w-5xl p-5 pb-10 mx-auto mb-10 gap-5 columns-2 space-y-5">
-        <img src={img1} alt="" />
-        <img src={img2} alt="" />
-        <img src={img3} alt="" />
-        <img src={img4} alt="" />
+        <img src={img1} className="rounded-xl" alt="" />
+        <img src={img2} className="rounded-xl" alt="" />
+        <img src={img3} className="rounded-xl" alt="" />
+        <img src={img4} className="rounded-xl" alt="" />
       </div>
     </div>
   );

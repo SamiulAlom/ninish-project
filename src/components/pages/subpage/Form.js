@@ -120,7 +120,6 @@ export default function Form() {
         <div className="pb-10">
           <button
             type="submit"
-            value="Submit"
             className="bg-[#3b1468] hover:bg-blue-700 text-white font-bold py-3 px-7 rounded-full disabled:bg-slate-600"
             disabled={loading}
           >

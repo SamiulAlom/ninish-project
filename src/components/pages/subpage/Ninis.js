@@ -2,9 +2,9 @@ import React from "react";
 
 export default function Ninis() {
   return (
-    <div className="flex justify-center">
-      <div className=" p-10  min-[600px]:w-[80vw] max-sm:p-5 pt-20 text-white pb-10 bg-[rgb(61,0,125,0.9)] ">
-        <div className=" container">
+    <div className="flex justify-center text-center">
+      <div className="p-10  pt-20 text-white pb-10 bg-[rgb(61,0,125,0.9)] rounded-xl">
+        <div className="container">
           <h1 className="text-2xl text-center font-bold">নিণীষ কি?</h1>
           <p className="text-center text-lg mt-5">
             নিণীষ শিক্ষার্থীদের সহ-শিক্ষা কার্যক্রম ভিত্তিক একটি শিক্ষামূলক
