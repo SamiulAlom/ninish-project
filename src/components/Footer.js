@@ -9,7 +9,7 @@ export default function Navbar() {
           <Link to="/" className="flex sm:block justify-center">
             <img src={images} alt="logo" className="w-27 h-20" />
           </Link>
-          <h3>A Co-curricular Ed-Tech Platform</h3>
+          <h3>A Co-curricular Edu-Tech Platform</h3>
         </div>
         <div className="mt-4 md:mb-0">
           <p className="mb-2 md:mb-0">যোগাযোগ </p>

@@ -28,9 +28,7 @@ export default function Contact() {
         <div className="pt-20 container">
           <h1 className="text-2xl text-center font-bold">Send Us Email</h1>
           <span className="flex pt-7 justify-center">
-            <h2 className="text-1xl text-center font-300">
-              support@ninish.com
-            </h2>
+            <h2 className="text-1xl text-center font-300">info@ninish.com</h2>
           </span>
         </div>
       </div>
