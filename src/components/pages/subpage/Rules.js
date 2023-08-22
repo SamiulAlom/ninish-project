@@ -3,11 +3,8 @@ import { Link } from "react-router-dom";
 
 export default function Rules() {
   return (
-    <div
-      // style={{ height: "73vh" }}
-      className="pb-10 bg-white flex justify-center"
-    >
-      <div className="pt-10 container grid gap-2">
+    <div className="pb-10 bg-white flex justify-center">
+      <div className="pt-10 container grid gap-2 px-2">
         <h1 className="text-[28px] text-[#3D007D] pb-3 text-center font-bold">
           মুজিব অলিম্পিয়াড ২০২৩ - গাজীপুর পর্ব
         </h1>

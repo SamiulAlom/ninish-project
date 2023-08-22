@@ -23,53 +23,63 @@ const ContextProvider = (props) => {
   }, []);
 
   const checkRegNumber = async (regNumber) => {
-    const res = await fetch(`${baseUrl}/checkReg/${regNumber}`, {
-      method: "get",
-    });
-    const data = await res.json();
-    if (data === 200) {
-      return true;
+    try {
+      const res = await fetch(`${baseUrl}/checkReg/${regNumber}`, {
+        method: "get",
+      });
+      const data = await res.json();
+      if (data === 200) {
+        return true;
+      }
+      toast.error("আপনার রেজিস্ট্রেশন নম্বরটি ভুল");
+      return false;
+    } catch (error) {
+      toast.error("অসুবিধার জন্য দুঃখিত। আবার চেষ্টা করুন।");
     }
-    toast.error("আপনার রেজিস্ট্রেশন নম্বরটি ভুল");
-    return false;
   };
 
   const checkQuizDone = async (regNum) => {
-    const res = await fetch(`${baseUrl}/check/${regNum}`, {
-      method: "get",
-    });
-    const data = await res.json();
-    if (data === 200) {
-      return true;
-    } else return false;
+    try {
+      const res = await fetch(`${baseUrl}/check/${regNum}`, {
+        method: "get",
+      });
+      const data = await res.json();
+      if (data === 200) {
+        return true;
+      } else return false;
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const modifyUser = async (name, cls, institute, phone, regNumber) => {
-    const res = await checkQuizDone(regNumber);
-    let quizDone = false;
-    if (res) quizDone = true;
-    setUser({
-      name: name,
-      cls: cls,
-      institute: institute,
-      phone: phone,
-      regNumber: regNumber,
-      quizDone: quizDone,
-    });
-
-    localStorage.clear();
-
-    localStorage.setItem(
-      "user",
-      JSON.stringify({
+    try {
+      const res = await checkQuizDone(regNumber);
+      let quizDone = false;
+      if (res) quizDone = true;
+      setUser({
         name: name,
         cls: cls,
         institute: institute,
         phone: phone,
         regNumber: regNumber,
         quizDone: quizDone,
-      })
-    );
+      });
+
+      localStorage.clear();
+
+      localStorage.setItem(
+        "user",
+        JSON.stringify({
+          name: name,
+          cls: cls,
+          institute: institute,
+          phone: phone,
+          regNumber: regNumber,
+          quizDone: quizDone,
+        })
+      );
+    } catch (error) {}
   };
 
   const submitQuiz = async (quizzes) => {

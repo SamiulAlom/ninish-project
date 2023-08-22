@@ -7,7 +7,7 @@ export default function QuizLayout() {
   const { id } = useParams();
 
   const [totalTime, setTotalTime] = useState(
-    Number(id) === 1 ? 1 : Number(id) === 2 ? 1 : Number(id) === 3 ? 1 : 1
+    Number(id) === 1 ? 20 : Number(id) === 2 ? 25 : Number(id) === 3 ? 35 : 45
   );
   const [seconds, setSeconds] = useState(0);
   const [ready, setReady] = useState(false);
@@ -62,12 +62,12 @@ export default function QuizLayout() {
           <span>
             মোট সময়ঃ{" "}
             {Number(id) === 1
-              ? "২০"
+              ? 20
               : Number(id) === 2
-              ? "২৫"
+              ? 25
               : Number(id) === 3
-              ? "৩৫"
-              : "৪৫"}{" "}
+              ? 35
+              : 45}{" "}
             মিনিট
           </span>
         </p>

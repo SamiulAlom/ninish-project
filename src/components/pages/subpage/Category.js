@@ -4,10 +4,7 @@ import { Link } from "react-router-dom";
 export default function Category() {
   return (
     <div className="flex justify-center bg-white">
-      <div
-        style={{ height: "73vh" }}
-        className="form text-[18px] bg-white p-20"
-      >
+      <div className="form text-[18px] bg-white p-20">
         <Link to={`/quiz/${1}`}>
           <div
             style={{ height: "80px", width: "40vw", alignItems: "center" }}

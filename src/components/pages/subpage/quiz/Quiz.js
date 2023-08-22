@@ -37,7 +37,7 @@ export default function Quiz({ setGotQuiz, id, forceQuizSubmit }) {
   // Watch for data fetch error
   useEffect(() => {
     if (isError && !isLoading) {
-      toast.error("Server error please reload.");
+      toast.error("অসুবিধার জন্য দুঃখিত। আবার চেষ্টা করুন।");
     }
   }, [isError, isLoading]);
 
@@ -96,7 +96,7 @@ export default function Quiz({ setGotQuiz, id, forceQuizSubmit }) {
   } else if (isError && !isLoading) {
     content = (
       <div className="flex justify-center bg-red-600 text-white rounded-md py-2">
-        Error Fetching data try again
+        অসুবিধার জন্য দুঃখিত। আবার চেষ্টা করুন।
       </div>
     );
   } else if (!isError && quizzes.length > 0) {
