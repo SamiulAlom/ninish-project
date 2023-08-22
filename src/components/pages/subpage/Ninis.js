@@ -1,12 +1,16 @@
 import React from "react";
+import Logo from "../../../images/logo.png";
 
 export default function Ninis() {
   return (
     <div className="flex justify-center text-center">
-      <div className="p-10  pt-20 text-white pb-10 bg-[rgb(61,0,125,0.9)] rounded-xl">
+      <div className="p-10 text-white pb-10 bg-[rgb(61,0,125,0.9)] rounded-xl">
         <div className="container">
+          <div className="flex justify-center">
+            <img src={Logo} alt="logo" className="w-28 h-28" />
+          </div>
           <h1 className="text-2xl text-center font-bold">নিণীষ কি?</h1>
-          <p className="text-center text-lg mt-5">
+          <p className="text-justify text-lg mt-5">
             নিণীষ শিক্ষার্থীদের সহ-শিক্ষা কার্যক্রম ভিত্তিক একটি শিক্ষামূলক
             অনলাইন প্লাটফর্ম যেখানে বিভিন্ন বিশ্ববিদ্যালয়ে পড়ুয়া মেধাবী
             শিক্ষার্থীরা কাজ করে স্কুল, কলেজ এবং বিশ্ববিদ্যালয় পড়ুয়া

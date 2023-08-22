@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import images from "../images/logo.png";
+import Logo from "../images/logo.png";
 export default function Navbar() {
   return (
     <nav className="py-2 items-center bg-gradient-to-l from-[#e2dede] to-[#e9e3e3] no-print">
@@ -8,7 +8,7 @@ export default function Navbar() {
         <div className="flex sm:block justify-center">
           <Link to="/">
             {" "}
-            <img className=" w-27 h-20" src={images} alt="logo" />
+            <img className=" w-27 h-20" src={Logo} alt="logo" />
           </Link>
         </div>
         <div className="flex flex-wrap items-center justify-center sm:justify-end gap-1  w-full">
