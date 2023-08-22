@@ -8,7 +8,7 @@ export default function Banner() {
       {/* click here section */}
       <div
         style={{ height: "530px", paddingBottom: "10px" }}
-        className="bg-[#fff] max-sm:h-[550px] pt-5 w-50 justify-center flex"
+        className="bg-[#fff] pt-5 w-50 justify-center flex"
       >
         <div className="bg-gradient-to-tr container from-purple-900 to bg-green-900 h-full relative rounded-[15px]">
           <Link to="/mujib-olympiad">

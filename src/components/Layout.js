@@ -6,8 +6,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Navbar />
-      {/* Tailwind ready */}
-      <div>{children}</div>
+      <div className="container mx-auto px-2 md:px-6">{children}</div>
       <Footer />
     </>
   );
