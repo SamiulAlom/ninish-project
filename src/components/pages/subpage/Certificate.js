@@ -4,10 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function Certificate() {
   return (
-    <div
-      style={{ marginTop: "20vh" }}
-      className="flex min-h-[64vh] justify-center"
-    >
+    <div className="flex justify-center py-20">
       <div className=" w-full text-center container ">
         <div>
           {" "}

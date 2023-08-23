@@ -32,7 +32,7 @@ export default function QuizLayout() {
   timeLeft.setSeconds(timeLeft.getSeconds() + Number(seconds));
 
   return (
-    <div className="min-h-[74vh] container mx-auto px-2">
+    <div className="container mx-auto py-4">
       {/* Quiz Header */}
       <div className="text-center mb-4">
         <h1 className="text-[28px] text-[#3D007D] py-3 text-center font-bold">

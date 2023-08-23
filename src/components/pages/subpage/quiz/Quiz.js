@@ -120,7 +120,7 @@ export default function Quiz({ setGotQuiz, id, forceQuizSubmit }) {
     );
   }
   return (
-    <div className="min-h-[74vh] container mx-auto px-2">
+    <div className="container mx-auto">
       {/* Form */}
       <form onSubmit={handleSubmit}>
         <quizContext.Provider value={{ handleQuizUpdate }}>

@@ -47,15 +47,23 @@ body {
 }
 
 @media print {
+  @page {
+    size: A4 landscape;
+    scale: 109;
+  }
   .certificate-name{
     display: block;
   }
   .no-print {
       display: none !important;
   }
+  .certificate{
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .img-container img {
-  object-fit: cover;
+  object-fit: contain;
   width: 100%;
 }
