@@ -27,23 +27,9 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/online-batch" element={<Batch />} />
+            <Route path="/mujib-olympiad" element={<QuizPage />} />
+            <Route path="/form" element={<Form />} />
             {/* Pages that only visible to users who hasn't completed quiz */}
-            <Route
-              path="/mujib-olympiad"
-              element={
-                <PublicOutlet>
-                  <QuizPage />
-                </PublicOutlet>
-              }
-            />
-            <Route
-              path="/form"
-              element={
-                <PublicOutlet>
-                  <Form />
-                </PublicOutlet>
-              }
-            />
             <Route
               path="/categories"
               element={

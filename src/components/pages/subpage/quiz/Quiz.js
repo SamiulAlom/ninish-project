@@ -19,6 +19,7 @@ export default function Quiz({ setGotQuiz, id, forceQuizSubmit }) {
   const initializeState = (quizzes) => {
     const modQuizzes = _.cloneDeep(quizzes);
     modQuizzes.forEach((quiz) => {
+      quiz.attempted = false;
       const { options } = quiz;
       options.map((option) => (option.isSelected = false));
     });
@@ -43,32 +44,16 @@ export default function Quiz({ setGotQuiz, id, forceQuizSubmit }) {
 
   const handleQuizUpdate = (quizNumber, optionNumber, action) => {
     const modQuizzes = _.cloneDeep(quizzes);
+    modQuizzes[quizNumber].attempted = true;
     modQuizzes[quizNumber].options.map((option) => (option.isSelected = false));
     modQuizzes[quizNumber].options[optionNumber].isSelected = action;
     setQuizzes(modQuizzes);
   };
 
-  // Check if all the questions are answered
-  const checkFormat = () => {
-    let flag = true;
-    quizzes.forEach((quiz) => {
-      let ck = 0;
-      quiz.options.forEach((option) => {
-        if (!option.isSelected) ck++;
-      });
-      if (ck === 4) {
-        flag = false;
-      }
-    });
-    return flag;
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    if (checkFormat()) {
-      await submitQuiz(quizzes);
-    } else toast.error("সবগুলো প্রশ্নের উত্তর দিন!");
+    await submitQuiz(quizzes);
     setLoading(false);
   };
 
@@ -85,6 +70,22 @@ export default function Quiz({ setGotQuiz, id, forceQuizSubmit }) {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [forceQuizSubmit]);
+
+  // useEffect(() => {
+  //   const handleVisibilityChange = () => {
+  //     if (document.hidden) {
+  //       // User switched tabs or left the page
+  //       setMessage("Goodbye, world!");
+  //     } else {
+  //       // User came back to the page
+  //       setMessage("Welcome back!");
+  //     }
+  //   };
+  //   document.addEventListener("visibilitychange", handleVisibilityChange);
+  //   return () => {
+  //     document.removeEventListener("visibilitychange", handleVisibilityChange);
+  //   };
+  // }, []);
 
   // Decide what to show
   let content = null;

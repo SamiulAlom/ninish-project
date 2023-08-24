@@ -21,7 +21,7 @@ export default function Category() {
             style={{ height: "80px", alignItems: "center" }}
             className="flex mb-10 text-white bg-[#054932] text-center rounded-[10px] justify-center p-10"
           >
-            নিম্ন মাধ্যমিক(৬ষ্ঠ ও ৭ম)
+            নিম্ন মাধ্যমিক(৬ষ্ঠ,৭ম,৮ম)
           </div>
         </Link>
         <Link to={`/quiz/${3}`}>

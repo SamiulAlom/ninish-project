@@ -42,7 +42,7 @@ export default function QuizLayout() {
           {Number(id) === 1
             ? "প্রাথমিক(৩য়,৪র্থ,৫ম)"
             : Number(id) === 2
-            ? "নিম্ন মাধ্যমিক(৬ষ্ঠ ও ৭ম)"
+            ? "নিম্ন মাধ্যমিক(৬ষ্ঠ,৭ম,৮ম)"
             : Number(id) === 3
             ? "মাধ্যমিক(৯ম ও ১০ম)"
             : "উচ্চ মাধ্যমিক(১১শ ও ১২শ)"}
@@ -51,12 +51,12 @@ export default function QuizLayout() {
           <span>
             মোট প্রশ্নঃ{" "}
             {Number(id) === 1
-              ? "৩০"
+              ? 30
               : Number(id) === 2
-              ? "৪০"
+              ? 40
               : Number(id) === 3
-              ? "৫০"
-              : "৬০"}
+              ? 50
+              : 60}{" "}
             টি
           </span>
           <span>

@@ -32,20 +32,23 @@ export default function Download() {
         </div>
         {/* Image overlay text */}
         <span
-          style={{ top: "260px", left: "32vw" }}
+          style={{ top: "36%", left: "32vw" }}
           className="absolute from-neutral-700 text-[20px] text-black certificate-name"
         >
           {user?.name}
         </span>
         <div className="text-center mt-10 text-sm font-bold font-sans text-purple-900 no-print">
           <h3 className="text-lg mb-2 underline text-blue-600">
-            সার্টিফিকেট ডাউনলোড করার নিওমাবলিঃ
+            সার্টিফিকেট ডাউনলোড করার নিয়মাবলী:
           </h3>
           <ul className="grid gap-2">
             <li>*কম্পিউটার হতে ক্রম (Chrome) ব্রাউজার ব্যবহার করুন</li>
             <li>
               *ডাউনলোড বাটন এ ক্লিক করার পর <b>Destination</b> অপশন হতে{" "}
               <b>Save as PDF</b> সিলেক্ট করুন
+            </li>
+            <li>
+              *<b>Margins</b> অপশন হতে <b>None</b> সিলেক্ট করুন
             </li>
             <li>
               <b>*Save</b> বাটন এ ক্লিক করে সার্টিফিকেট সেভ করে নিন

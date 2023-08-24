@@ -46,11 +46,10 @@ body {
   display: none;
 }
 
+@page {
+  size: letter landscape;
+}
 @media print {
-  @page {
-    size: A4 landscape;
-    scale: 109;
-  }
   .certificate-name{
     display: block;
   }
