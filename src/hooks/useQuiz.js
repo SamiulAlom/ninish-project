@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
 
 export default function useQuizList(category_id) {
   const [quizList, setQuizList] = useState([]);
@@ -8,19 +9,24 @@ export default function useQuizList(category_id) {
   const baseUrl = process.env.REACT_APP_BASE_URL;
 
   useEffect(() => {
-    async function fetchData() {
+    const fetchData = async () => {
       try {
         const res = await fetch(`${baseUrl}/quizzes/${category_id}`, {
           method: "get",
         });
         const data = await res.json();
-        setQuizList(data);
+        if (data === "Failed") {
+          setIsError(true);
+          setIsLoading(false);
+          toast.error("অনুগ্রহ করে অপেক্ষা করুন।");
+        } else setQuizList(data);
         setIsLoading(false);
       } catch (err) {
+        console.log(err);
         setIsError(true);
         setIsLoading(false);
       }
-    }
+    };
     fetchData();
   }, [category_id, baseUrl]);
 

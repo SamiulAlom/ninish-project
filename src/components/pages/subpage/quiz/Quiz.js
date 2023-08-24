@@ -83,6 +83,7 @@ export default function Quiz({ setGotQuiz, id, forceQuizSubmit }) {
     if (forceQuizSubmit) {
       handleForceSubmit();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [forceQuizSubmit]);
 
   // Decide what to show

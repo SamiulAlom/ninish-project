@@ -6,7 +6,10 @@ export default function Question({ quiz, quizNumber }) {
   const { options, question } = quiz;
   return (
     <div className="bg-purple-200 rounded-md p-4">
-      <h3 className="text-2xl mb-2 font-bold">{question}</h3>
+      <h3 className="text-2xl mb-2 font-bold">
+        {" "}
+        {quizNumber + 1} - {question}
+      </h3>
       <p className="mb-2 flex gap-2 items-center">
         <ShieldQuestion /> সঠিক উত্তর নির্বাচন করুন
       </p>
