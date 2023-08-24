@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import MainContext from "../../../../contextApi/MainContext";
 import Counter from "../../Counter";
 import Quiz from "./Quiz";
 
 export default function QuizLayout() {
   const { id } = useParams();
+  const { user } = useContext(MainContext);
+  const { regNumber } = user;
 
   const [totalTime, setTotalTime] = useState(
     Number(id) === 1 ? 20 : Number(id) === 2 ? 25 : Number(id) === 3 ? 35 : 45
@@ -15,15 +18,17 @@ export default function QuizLayout() {
   const [forceQuizSubmit, setForceQuizSubmit] = useState(false);
 
   useEffect(() => {
-    setReady(false);
-    if (localStorage.getItem(`totalTime_${id}`)) {
-      setTotalTime(localStorage.getItem(`totalTime_${id}`));
+    if (regNumber !== undefined) {
+      setReady(false);
+      if (localStorage.getItem(`totalTime_${regNumber}_${id}`)) {
+        setTotalTime(localStorage.getItem(`totalTime_${regNumber}_${id}`));
+      }
+      if (localStorage.getItem(`seconds_${regNumber}_${id}`)) {
+        setSeconds(localStorage.getItem(`seconds_${regNumber}_${id}`));
+      }
+      setReady(true);
     }
-    if (localStorage.getItem(`seconds_${id}`)) {
-      setSeconds(localStorage.getItem(`seconds_${id}`));
-    }
-    setReady(true);
-  }, [id]);
+  }, [id, regNumber]);
 
   let timeLeft = new Date();
 
@@ -80,6 +85,7 @@ export default function QuizLayout() {
               totalTime={totalTime}
               quizId={id}
               setForceQuizSubmit={setForceQuizSubmit}
+              regNum={user.regNumber}
             />
           )}
         </div>

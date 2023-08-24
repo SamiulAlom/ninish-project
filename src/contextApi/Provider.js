@@ -66,8 +66,6 @@ const ContextProvider = (props) => {
         quizDone: quizDone,
       });
 
-      localStorage.clear();
-
       localStorage.setItem(
         "user",
         JSON.stringify({
